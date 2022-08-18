@@ -1,16 +1,9 @@
-import { Component, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Todo from "../components/Todo";
 // import Todo from "../components/Todo";
-import {
-  IconCheck,
-  IconTrash,
-  IconArrowUp,
-  IconArrowDown,
-} from "@tabler/icons";
 
 export default function Home() {
   const [todo, setTodo] = useState([]);
-  const [todoInput, setTodoInput] = useState("");
 
   const deleteTodo = (idx) => {
     setTodo(todo.filter((_, i) => i !== idx));
