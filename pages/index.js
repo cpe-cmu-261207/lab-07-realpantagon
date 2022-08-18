@@ -77,7 +77,6 @@ export default function Home() {
   }, []);
 
   const [isFirstRender, setIsfirstRender] = useState(true);
-
   useEffect(() => {
     if (isFirstRender) {
       setIsfirstRender(false);
