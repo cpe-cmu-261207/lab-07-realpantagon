@@ -105,28 +105,7 @@ export default function Home() {
           onKeyUp={onKeyUpHandler}
         />
         {/* Todos */}
-        {/* { Example 1 } */}
-
         {output}
-        {/* Example 2 */}
-        {/*
-          <div className="border-bottom p-1 py-2 fs-2 d-flex gap-2">
-            <span className="me-auto">Todo with buttons</span>
-
-            <button className="btn btn-success">
-              <IconCheck />
-            </button>
-            <button className="btn btn-secondary">
-              <IconArrowUp />
-            </button>
-            <button className="btn btn-secondary">
-              <IconArrowDown />
-            </button>
-            <button className="btn btn-danger">
-              <IconTrash />
-            </button>
-          </div>
-      */}
         {/* summary section */}
         <p className="text-center fs-4">
           <span className="text-primary">All ({todo.length}) </span>
