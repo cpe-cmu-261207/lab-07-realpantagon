@@ -26,10 +26,18 @@ export default function Todo(props) {
       <button style={hide} onClick={props.onMark} className="btn btn-success">
         <IconCheck />
       </button>
-      <button style={hide} className="btn btn-secondary">
+      <button
+        style={hide}
+        onClick={props.onMoveup}
+        className="btn btn-secondary"
+      >
         <IconArrowUp />
       </button>
-      <button style={hide} className="btn btn-secondary">
+      <button
+        style={hide}
+        onClick={props.onMovedown}
+        className="btn btn-secondary"
+      >
         <IconArrowDown />
       </button>
       <button style={hide} onClick={props.ondelete} className="btn btn-danger">
