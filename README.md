@@ -11,6 +11,8 @@ npm install
 npm run dev
 ```
 
+7
+
 ## Build & Deployment
 
 ให้นศ.ศึกษาวิธีการ build ใน **codesandbox.io** ได้จาก slide **Slide 10 - React Part One (extras)**

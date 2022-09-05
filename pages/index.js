@@ -1,8 +1,35 @@
+import { IconMoon, IconSunHigh } from "@tabler/icons";
 import { useEffect, useState } from "react";
+import { ThemeContext } from "../../../react/lecture12/contexts/ThemeContext";
 import Todo from "../components/Todo";
 // import Todo from "../components/Todo";
 
 export default function Home() {
+  //---------------------------------------------------------------------
+  const themes = {
+    light: {
+      name: "light",
+      background: "white",
+      foreground: "black",
+    },
+    dark: {
+      name: "dark",
+      background: "black",
+      foreground: "white",
+    },
+  };
+
+  const [selTheme, setSelTheme] = useState(themes.light);
+
+  const toggleTheme = () => {
+    if (selTheme.name === "light") {
+      setSelTheme(themes.dark);
+    } else {
+      setSelTheme(themes.light);
+    }
+  };
+  //---------------------------------------------------------------------
+
   const [todo, setTodo] = useState([]);
 
   const deleteTodo = (idx) => {
@@ -104,6 +131,10 @@ export default function Home() {
           placeholder="insert todo here..."
           onKeyUp={onKeyUpHandler}
         />
+        <button className="btn btn-primary" onClick={toggleTheme}>
+          {selTheme.name === "light" && <IconSunHigh />}
+          {selTheme.name === "dark" && <IconMoon />}
+        </button>
         {/* Todos */}
         {output}
         {/* summary section */}
