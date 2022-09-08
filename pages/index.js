@@ -1,6 +1,7 @@
 import { IconMoon, IconSunHigh } from "@tabler/icons";
 import { useEffect, useState } from "react";
 import { ThemeContext } from "../../../react/lecture12/contexts/ThemeContext";
+import { useContext } from "react";
 import Todo from "../components/Todo";
 // import Todo from "../components/Todo";
 
@@ -118,7 +119,12 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: selTheme.background,
+        color: selTheme.foreground,
+      }}
+    >
       {/* Entire App container (required for centering) */}
       <div style={{ maxWidth: "700px" }} className="mx-auto">
         {/* App header */}
@@ -126,15 +132,18 @@ export default function Home() {
           Minimal Todo List <span className="fst-normal">☑️</span>
         </p>
         {/* Input */}
-        <input
-          className="form-control mb-1 fs-4"
-          placeholder="insert todo here..."
-          onKeyUp={onKeyUpHandler}
-        />
-        <button className="btn btn-primary" onClick={toggleTheme}>
-          {selTheme.name === "light" && <IconSunHigh />}
-          {selTheme.name === "dark" && <IconMoon />}
-        </button>
+        <div className="d-flex align-item-center">
+          <input
+            className="form-control mb-1 fs-4"
+            placeholder="insert todo here..."
+            onKeyUp={onKeyUpHandler}
+          />
+          <button className="btn btn-primary" onClick={toggleTheme}>
+            {selTheme.name === "light" && <IconSunHigh />}
+            {selTheme.name === "dark" && <IconMoon />}
+          </button>
+        </div>
+
         {/* Todos */}
         {output}
         {/* summary section */}

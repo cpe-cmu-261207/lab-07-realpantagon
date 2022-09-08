@@ -6,9 +6,12 @@ import {
   IconArrowUp,
   IconArrowDown,
 } from "@tabler/icons";
+import { ThemeContext } from "../contexts/ThemeContext";
+import { useContext } from "react";
 
 export default function Todo(props) {
   const [hide, setHide] = useState({ display: "none" });
+  // const { selTheme } = useContext(ThemeContext);
 
   return (
     <div
@@ -16,10 +19,7 @@ export default function Todo(props) {
       className="border-bottom p-1 py-2 fs-2 d-flex gap-2"
       onMouseOut={() => setHide({ display: "none" })}
     >
-      <span
-        className="me-auto"
-        style={{ textDecoration: props.completed ? "line-through" : "" }}
-      >
+      <span style={props.completed ? { textDecoration: "line-through" } : null}>
         {props.title}
       </span>
 
